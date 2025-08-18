@@ -1,15 +1,15 @@
 from selenium.webdriver.common.by import By
 
 
-# Definição da classe da página, dos localizadores e do método na classe
+# Definição da classe da página, dos localizadores e do metodo na classe
 class UrbanRoutesPage:
     # Localizadores como atributos de classe
     FROM_LOCATOR = (By.ID, 'from')
     TO_LOCATOR = (By.ID, 'to')
     PERSONAL_OPTION_LOCATOR = (By.XPATH, '//div[text()="Personal"]')
     BIKE_ICON_LOCATOR = (By.XPATH, '//img[@src="/static/media/bike.fb41c762.svg"]')
-    BIKE_TEXT_LOCATOR = (By.XPATH, '//div[contains(text(),"Bike")]')
-    DURATION_TEXT_LOCATOR = (By.XPATH, '//div[contains(text(),"Duration")]')
+    BIKE_TEXT_LOCATOR = (By.XPATH, '//div[contains(text(),"Bicicleta")]')
+    DURATION_TEXT_LOCATOR = (By.XPATH, '//div[contains(text(),"Duração")]')
 
     def __init__(self, driver):
         self.driver = driver  # Inicializar o driver
@@ -35,6 +35,7 @@ class UrbanRoutesPage:
         return self.driver.find_element(*self.BIKE_TEXT_LOCATOR).text
 
     def get_duration_text(self):
+        # Retornar o texto "Duração"
         return self.driver.find_element(*self.DURATION_TEXT_LOCATOR).text
 
     # Etapa para inserir os locais "De" e "Para"
